@@ -35,6 +35,14 @@ jobs:
       with:
         name: my-build-package
         path: dist/*.whl
+        
+    - name: Repo Checkout
+      uses: actions/checkout@v2
+    - uses: actions/download-artifact@v4
+      with:
+        name: my-build-package
+        path: bike_sharing_api
+        
     - name: Log in to DockerHub
       run: echo "${{ secrets.DOCKER_PASS_TOKEN }}" | docker login -u "${{ secrets.DOCKER_USER_NAME }}" --password-stdin
     - name: Build and push Docker image
