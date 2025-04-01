@@ -15,13 +15,13 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
     - name: install requirements
-      run: pip install -r requirements/requirements.txt
+      run: pip install -r bikeshare_project/requirements/requirements.txt
     - name: Install Test requirements
-      run: pip install -r requirements/test_requirements.txt
+      run: pip install -r bikeshare_project/requirements/test_requirements.txt
     - name: Install build package
       run: pip install build
     - name: Run training pipeline
-      run: python bikeshare_model/train_pipeline.py
+      run: python bikeshare_project/bikeshare_model/train_pipeline.py
     - name : Execute unit testcases
       run: pytest
     - name: Build Model to generage whl file
