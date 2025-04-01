@@ -1,15 +1,13 @@
 # actions.yaml
 # This workflow will install Python dependencies, trains, tests, builds, containerizes the code
-name: Python app
+name: actions demo
 on:
   push:
     branches: 
       - main
-      - test
   pull_request:
     branches: 
       - main
-      - test
 jobs:
   docker:
     runs-on: ubuntu-latest
